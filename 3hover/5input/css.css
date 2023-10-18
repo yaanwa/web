@@ -1,0 +1,263 @@
+body{
+    height: 100vh;
+    background-color: #090821;
+    display:flex ;
+    justify-content: space-around;
+    align-items: center;
+}
+.a0,.b0,.c0{
+    outline: none;
+    padding: 10px 15px;
+    width: 100px;
+    background-color: #2d3058;
+    border: none;
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+}
+input::placeholder{
+    text-align: center;
+}
+.a{
+    width: 100px;
+    height: 25px;
+    position: relative;
+    
+}
+
+.a1{
+    height: 2px;
+    width: 130px;
+    left: 0;
+    top: 0;
+    position: absolute;
+    background: aqua;
+    transform-origin:left;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+}
+
+.a0:focus~.a1{
+    transform: scaleX(1);
+    transform-origin:right;
+}
+.a2{
+    height: 35px;
+    width: 2px;
+    top:0;
+    bottom: 0;
+    background: aqua;
+    position: absolute;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.5s;
+}
+.a0:focus~.a2{
+    transform: scaleY(1);
+    transform-origin:top;
+}
+.a3{
+    width: 130px;
+    height: 2px;
+    left: 0;
+    bottom: -10px;
+    background: aqua;
+    position: absolute;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s;
+}
+.a0:focus~.a3{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+.a4{
+    width: 2px;
+    height: 35px;
+    right: -31px;
+    top: 0;
+    bottom: 0;
+    background: aqua;
+    position: absolute;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.5s;
+}
+.a0:focus~.a4{
+    transform-origin: bottom;
+    transform: scaleY(1);
+}
+
+.b{
+    width: 100px;
+    height: 25px;
+    position: relative;
+}
+.b1{
+    width: 130px;
+    height: 2px;
+    background: aqua;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+    
+}
+.b0:focus~.b1{
+    transform: scaleX(1);
+}
+.b2{
+    width: 2px;
+    height: 35px;
+    background: aqua;
+    top: 0;
+    position: absolute;
+    transform: scaleY(0);
+    transition: transform 0.5s;
+}
+.b0:focus~.b2{
+    transform: scaleY(1);
+}
+.b3{
+    width: 130px;
+    height: 2px;
+    background: aqua;
+    left: 0;
+    position: absolute;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+}
+.b0:focus~.b3{
+    transform: scaleX(1);
+}
+.b4{
+    width: 2px;
+    height: 35px;
+    background: aqua;
+    right:-30px;
+    top: 0;
+    position: absolute;
+    transform: scaleY(0);
+    transition: transform 0.5s;
+}
+.b0:focus~.b4{
+    transform: scaleY(1);
+}
+
+.c{
+    width: 100px;
+    height: 25px;
+    position: relative;
+}
+.c1{
+    width: 130px;
+    height: 2px;
+    background: aqua;
+    position: absolute;
+    bottom: -10px;
+    transform: scaleX(0);
+    transform-origin:right;
+    transition: transform 0.5s;
+}
+.c0:focus~.c1{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+.c2{
+    width: 2px;
+    height: 35px;
+    background: aqua;
+    position: absolute;
+    right:-30px;
+    top: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.5s;
+    transition-delay: 0.6s;
+}
+.c0:focus~.c2{
+    transform: scaleY(1);
+    transform-origin: bottom;
+}
+.c3{
+    background: aqua;
+    width: 130px;
+    height: 2px;
+    transform-origin:left ;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+    top: 0;
+    position: absolute;
+    transition-delay: 1s;
+}
+.c0:focus~.c3{
+    transform: scaleX(1);
+    transform-origin: right;
+}
+.c4{
+    width: 2px;
+    height: 35px;
+    background: aqua;
+    position: absolute;
+    transform: scaleY(0);
+    top: 0;
+    bottom: 0;
+    transform-origin: bottom;
+    transition: transform 0.5s;
+    transition-delay:1.5s;
+}
+.c0:focus~.c4{
+    transform: scaleY(1);
+    transform-origin: top;
+}
+
+
+.d0,.e0{
+    outline: none;
+    padding: 10px 15px;
+    width: 100px;
+    border: none;
+    background-color: transparent;
+    text-align: center;
+    color: aliceblue;
+    text-align: start;
+    font-size: 15px;
+}
+.d{
+    width: 100px;
+    height: 25px;
+    position: relative;
+}
+.d1{
+    width: 130px;
+    height: 2px;
+    position: absolute;
+    background: aqua;
+    bottom: -10px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s;
+}
+.d0:focus~.d1{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.e{
+    width: 100px;
+    height: 25px;
+    position: relative;
+    
+}
+.e1{
+    width: 130px;
+    height: 2px;
+    background: aqua;
+    position: absolute;
+    bottom: -10px;
+    transform: scaleX(0);
+    transition: transform 0.5s
+}
+.e0:focus~.e1{
+    transform: scaleX(1);
+}

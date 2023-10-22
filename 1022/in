@@ -1,0 +1,11 @@
+// let a = document.querySelector('input')
+// let b = document.querySelector('ul')
+
+// function name(params) {
+
+// }
+// function add() {
+//     b.innerHTML += `<li>${a.value}</li>`
+    
+//     a.value = ''
+// }

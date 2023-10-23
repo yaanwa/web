@@ -1,5 +1,5 @@
 const input = document.querySelector('input')
-const ul = document.querySelector('ul')
+const ul = document.querySelector('ol')
 let id = 0
 
 function add() {

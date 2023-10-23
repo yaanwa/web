@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <button onclick="add()">add</button>
+    <ol>
+
+    </ol>
+
+    <script>
+
+        let id = -1;
+        
+        const inp = document.querySelector('input')
+        const ol = document.querySelector('ol')
+
+        function add(){
+            ol.innerHTML += `
+                <li data-id='${++id}'>
+                    ${inp.value}
+                    <button onclick='modify(${id})'>m</button>
+                    <button onclick='del(${id})'>X</button>
+                </li>`
+        }
+
+        function del(id){
+            document.querySelector(`[data-id='${id}']`).remove()
+        }
+
+        function modify(id){
+            const new_name = prompt('新的Thing')
+            document.querySelector(`[data-id='${id}']`).innerHTML = `
+                    ${new_name}
+                    <button onclick='modify(${id})'>m</button>
+                    <button onclick='del(${id})'>X</button>
+                `
+        }
+    </script>
+
+</body>
+</html>

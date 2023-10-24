@@ -14,6 +14,6 @@ function add() {
 }
 
 function  del(id) {
-    const li = document.querySelector(`li[id="${id}"]`);
-    li.remove()
+    const ol = document.querySelector(`li[id="${id}"]`);
+    ol.remove()
 }

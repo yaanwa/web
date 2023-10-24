@@ -4,10 +4,10 @@ let id = 0
 
 function add() {
     ul.innerHTML += `
-        <li id='${++id}'>
-            ${id}. ${input.value}
+        <ol id='${++id}'>
+            ${input.value}
             <button onclick='del(${id})'>⁛</button>
-        </li>
+        </ol>
         `
     input.value=''
     console.log(input.value);

@@ -4,16 +4,16 @@ let id = 0
 
 function add() {
     ul.innerHTML += `
-        <ol id='${++id}'>
+        <li id='${++id}'>
             ${input.value}
             <button onclick='del(${id})'>⁛</button>
-        </ol>
+        </li>
         `
     input.value=''
     console.log(input.value);
 }
 
 function  del(id) {
-    const ol = document.querySelector(`li[id="${id}"]`);
-    ol.remove()
+    const li = document.querySelector(`li[id="${id}"]`);
+    li.remove()
 }

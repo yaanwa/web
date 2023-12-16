@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .a {
+            display: grid;
+            grid-template-columns: repeat(2, 100px);
+            grid-template-rows: repeat(2, 100px);
+            grid-gap: 1px;
+        }
+
+        .a>div {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(187, 230, 164);
+            border: 1px solid;
+        }
+
+        .a>div.active {
+            background-color: rgb(97, 120, 223);
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1></h1>
+    <div class="a">
+        <div data-value="0"></div>
+        <div data-value="1"></div>
+        <div data-value="2"></div>
+        <div data-value="3"></div>
+    </div>
+    <p><button id="btn">送出</button></p>
+    <input type="hidden" name="ans" id="ans">
+    <script>
+        const divs = document.querySelectorAll('.a > div')
+        const h1 = document.querySelector('h1')
+        const title = ['垂直', '平行', '左上至右下', '右上至左下']
+        const wins = {
+            垂直: ['02', '13'],
+            平行: ['01', '23'],
+            左上至右下: ["03"],
+            右上至左下: ["12"],
+        }
+        function render() {
+            // console.log(title[Math.floor(Math.random() * 4)])
+            symbol = title[Math.floor(Math.random() * 4)]
+            h1.innerText += symbol
+            divs.forEach(el => {
+                el.addEventListener('click', (e) =>
+                    e.target.classList.toggle("active")
+                )
+            });
+            ans.value += wins[symbol]
+            console.log(ans)
+        }
+        function onSubmit() {
+            const user_click = Array.from(document.querySelectorAll('.active')).map((x) => x.dataset.value).join('')
+            if(wins[symbol].includes(user_click)){
+                alert('yes')
+            }else{
+                console.log()
+                alert('no')
+            }
+        }
+        render()
+        document.getElementById('btn').addEventListener('click' , onSubmit)
+    </script>
+</body>
+
+</html>

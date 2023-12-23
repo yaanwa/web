@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&family=Rubik+Scribble&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Rubik Doodle Shadow',sans-serif !important;
+    color: inherit;
+    /* text-decoration: none; */
+    box-sizing: border-box;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 100px;
+    display: flex;
+    background-color: rgb(174, 151, 134);
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.logo{
+    font-size: 2.5em;
+    user-select: none;
+    color: rgb(68, 49, 32);
+}
+
+nav>a{
+    position: relative;
+    font-size: 1.3em;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    color: #fff;
+}
+
+.btn{
+    width: 130px;
+    height: 50px;
+    background: padding-box;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 100%;
+    color: #ffffff;
+    margin-left: 35px;
+    transition: 0.5s;
+}
+
+.btn:hover{
+    background: rgb(140, 100, 75);
+}

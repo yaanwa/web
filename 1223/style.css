@@ -37,6 +37,7 @@ nav>a{
 }
 
 .btn{
+    position: relative;
     width: 130px;
     height: 50px;
     background: padding-box;
@@ -48,8 +49,25 @@ nav>a{
     color: #ffffff;
     margin-left: 35px;
     transition: 0.5s;
+    
 }
-
 .btn:hover{
     background: rgb(140, 100, 75);
 }
+/* .btn:before{
+    background: rgb(140, 100, 75);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    content: '';
+    position: absolute;
+    border-radius: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(140, 100, 75);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.5s;
+    z-index: -1;
+} */

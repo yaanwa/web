@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&family=Rubik+Scribble&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Rubik+Doodle+Shadow&family=Rubik+Scribble&display=swap');
 * {
     padding: 0;
     margin: 0;
-    font-family: 'Rubik Doodle Shadow',sans-serif !important;
     color: inherit;
-    /* text-decoration: none; */
+    font-family: 'Poppins', sans-serif !important;
+    text-decoration: none;
     box-sizing: border-box;
 }
 
@@ -15,13 +16,14 @@ header{
     width: 100%;
     padding: 10px 100px;
     display: flex;
-    background-color: rgb(174, 151, 134);
+    /* background-color: rgb(174, 151, 134); */
     justify-content: space-between;
     align-items: center;
     z-index: 99;
 }
 
 .logo{
+    font-family: 'Rubik Doodle Shadow', sans-serif !important;
     font-size: 2.5em;
     user-select: none;
     color: rgb(68, 49, 32);
@@ -29,6 +31,7 @@ header{
 
 nav>a{
     position: relative;
+    font-family: 'Poppins',sans-serif !important;
     font-size: 1.3em;
     text-decoration: none;
     font-weight: 500;
@@ -52,7 +55,7 @@ nav>a{
     
 }
 .btn:hover{
-    background: rgb(140, 100, 75);
+    background: rgb(174, 151, 134);
 }
 /* .btn:before{
     background: rgb(140, 100, 75);
@@ -71,3 +74,32 @@ nav>a{
     transition: transform 0.5s;
     z-index: -1;
 } */
+
+nav>a:hover::after{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+nav>a::after{
+    width: 75%;
+    height: 3px;
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 11%;
+    background: rgb(174, 151, 134);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s;
+}
+
+.wrapper{
+    color: #6c6462;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(83ee12e7e577db6b93cc4bdaa8f2c29f.jpg);
+    background-size: cover;
+    background-position: center;
+    
+}

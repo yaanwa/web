@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>二次驗證</title>
+    <style>
+        .grld{
+            width: 300px;
+            height: 300px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            background-color: #fff;
+        }
+        .grld>div{
+            width: 100%;
+            height: 100%;
+            border: 0.5px solid #775d44;
+        }
+        .active{
+            background-color: #8be69f;
+        }
+    </style>
+</head>
+<body>
+    <h1>二次驗證</h1>
+    <h3></h3>
+    <div class="square">
+        <div class="grld"></div>
+    </div>
+    <p></p>
+    <button onclick="reset()">重置</button>
+    <button onclick="submit()">提交</button>
+    <input type="hidden" name="answer" id="answer">
+    <script>
+        const win = {
+            水平:['123','456','789'],
+            垂直:['147','258','369'],
+            左上至右下:['159'],
+            右上至左下:['357']
+        }
+
+        const grld = document.querySelector('.grld')
+        for (let i = 1; i < 10; i++) {
+            grld.innerHTML += `<div data-value="${i}"></div>`
+        }
+
+        const title = ['水平','垂直','左上至右下','右上至左下']
+        num = ''
+        let i = 0
+        function reset() {
+            if (i == 4) {i = 0}
+            num = title[i]
+            const h3 = document.querySelector('h3');h3.innerText = num
+            answer.value = win[num]
+            i ++
+        }
+        reset()
+        
+        const divs = document.querySelectorAll('.grld > div')
+        divs.forEach(el => {
+            el.addEventListener('click' , (e) =>
+                e.target.classList.toggle('active')
+            )
+        });
+        function submit() {
+            user_input = [...document.querySelectorAll('.active')]
+            .map((x) => x.dataset.value).join('')
+            // console.log(answer.value);
+            console.log(user_input);
+            if (win[num].includes(user_input)) {
+                alert('正確')
+            }else{
+                alert('錯誤')
+            }
+        }
+
+
+    </script>
+</body>
+</html>

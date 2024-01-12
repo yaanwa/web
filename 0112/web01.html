@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grld{
+            width: 300px;
+            height: 300px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            background-color: #fff;
+        }
+        .grld>div{
+            border: 0.5px solid #975a5a;
+        }
+        .action{
+            background-color: #c1d68f;
+        }
+    </style>
+</head>
+<body>
+    <h1>圖形驗證</h1>
+    <h3></h3>
+    <div class="square">
+        <div class="grld">
+        </div>
+    </div>
+    <button onclick="Sumbit()">提交</button>
+    <button onclick="reset()">重置</button>
+    <script>
+        const win = {
+            水平: ['123','456','789'],
+            垂直: ['147','258','369'],
+            從左上至右下: ['159'],
+            從右上至左下: ['357']
+    }
+        const h3 = document.querySelector('h3')
+        const title = ['水平','垂直','從左上至右下','從右上至左下']
+        i=0
+        let num = ''
+        function reset() {
+            if (i == 4) {i=0}
+            num = title[i]
+            h3.innerText = num
+            i++
+        }
+        reset()
+
+        const grld = document.querySelector('.grld')
+        for (let i = 1; i < 10; i++) {
+            grld.innerHTML += `<div data-value="${i}"></div>`
+        }
+
+        const divs=document.querySelectorAll('.grld>div')
+        divs.forEach(el => {
+            el.addEventListener('click',(e) =>
+            e.target.classList.toggle('action')
+            )
+        });
+
+        function Sumbit(){
+            const ans = [...document.querySelectorAll('.action')].map((x) => x.dataset.value).join('')
+            if (win[num].includes(ans)) {
+                alert('yes')
+            }else{
+                alert('no')
+            }
+        }
+    </script>
+</body>
+</html>
